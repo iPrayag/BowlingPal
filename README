@@ -1,0 +1,19 @@
+BowlingPal - Simple bowling score keeper for Android.
+
+Copyright
+---------
+
+Copyright (C) 2011  Klymentiy Haykov <forsver@gmail.com>
+
+BowlingPal is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+
+Usage
+---------
+Package comes in format of Eclipse (tested on 3.6.2) project.
+You will also need Android Development Tools (ADT).
+
+Package includes copy of AChartengine library. For more information visit AChartengine page - http://www.achartengine.org
