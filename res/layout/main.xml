@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bowling_bg"
+    >
+<TextView 
+	android:id="@+id/trululu"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" />
+<EditText
+		android:numeric="decimal"
+		android:maxLength="3"
+        android:id="@+id/edittext1"
+        android:layout_width="fill_parent"
+        android:layout_height="70dip"
+        android:textSize="35dp"
+        android:imeOptions="actionDone"/>
+<Button
+android:layout_height="50dp"
+android:layout_width="140dp"
+
+android:id="@+id/button1"
+android:onClick="addScoreButton"
+android:text="Add score"
+android:layout_margin="10px"
+android:layout_gravity="center_horizontal">
+</Button>
+<Button
+android:text="Clear All Scores"
+android:id="@+id/button2"
+android:onClick="clearScore"
+android:layout_height="50dp"
+android:layout_width="140dp"
+android:layout_margin="5px"
+android:layout_gravity="center_horizontal">
+</Button>
+<Button
+android:text="Daily average graph"
+android:id="@+id/button3"
+android:onClick="dailyAverage"
+android:layout_height="60dp"
+android:layout_width="140dp"
+android:layout_margin="5px"
+android:layout_gravity="center_horizontal">
+</Button>
+<TextView android:text="Your Average is..."
+android:id="@+id/textView1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="35dip"
+android:layout_gravity="center_horizontal"
+android:scaleType="center"
+android:layout_margin="10px">
+</TextView>
+</LinearLayout>

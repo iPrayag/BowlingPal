@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:stretchColumns="1"
+	android:background="@drawable/bowling_bg">
+
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="Total rounds played"
+			android:padding="3dip" />
+		<TextView
+			android:textColor="#FFFFFF"
+			android:id="@+id/totalRoundsStat"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="% of strikes"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/percentOfStrikesStat"
+			android:text="Ctrl-O" android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<View
+	android:layout_height="2dip"
+	android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="% of spares"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/percentOfSparesStat"
+			android:text="Ctrl-S" android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></LinearLayout>
+	<Button
+		android:background="@drawable/mate_button"
+		android:layout_width="250dp"
+		android:layout_height="63dp"
+		android:textColor="#FCFCFC"
+		android:textStyle="bold"
+		android:scaleType="fitXY"
+		android:layout_marginTop="25dip"
+		android:text="Daily average graph"
+		android:onClick="dailyAverageGraph"
+		android:id="@+id/button1">
+	</Button>
+	<Button 
+		android:background="@drawable/mate_button"
+		android:layout_width="250dp"
+		android:layout_height="63dp"
+		android:textColor="#FCFCFC"
+		android:textStyle="bold"
+		android:scaleType="fitXY"
+		android:onClick="monthlyAverageGraph"
+		android:layout_marginTop="15dip"
+		android:text="Monthly average graph"
+		android:id="@+id/button2"></Button>
+	<Button
+		android:background="@drawable/mate_button"
+		android:layout_width="250dp"
+		android:layout_height="63dp"
+		android:textColor="#FCFCFC"
+		android:textStyle="bold"
+		android:scaleType="fitXY"
+		android:id="@+id/button3"
+		android:text="Edit scores"
+		android:layout_marginTop="15dip"
+		android:onClick="editEntries"></Button>
+
+</TableLayout>
