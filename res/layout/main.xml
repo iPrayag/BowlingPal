@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bowling_bg"
     >
-<TextView 
-	android:id="@+id/trululu"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" />
 <EditText
+		android:layout_margin="7.5dp"
 		android:numeric="decimal"
 		android:maxLength="3"
         android:id="@+id/edittext1"
@@ -17,41 +14,73 @@
         android:layout_height="70dip"
         android:textSize="35dp"
         android:imeOptions="actionDone"/>
-<Button
-android:layout_height="50dp"
-android:layout_width="140dp"
-
-android:id="@+id/button1"
-android:onClick="addScoreButton"
-android:text="Add score"
-android:layout_margin="10px"
-android:layout_gravity="center_horizontal">
-</Button>
-<Button
-android:text="Clear All Scores"
-android:id="@+id/button2"
-android:onClick="clearScore"
-android:layout_height="50dp"
-android:layout_width="140dp"
-android:layout_margin="5px"
-android:layout_gravity="center_horizontal">
-</Button>
-<Button
-android:text="Daily average graph"
-android:id="@+id/button3"
-android:onClick="dailyAverage"
-android:layout_height="60dp"
-android:layout_width="140dp"
-android:layout_margin="5px"
-android:layout_gravity="center_horizontal">
-</Button>
-<TextView android:text="Your Average is..."
-android:id="@+id/textView1"
-android:layout_width="wrap_content"
+<TextView
+android:layout_below="@+id/edittext1"
+android:textStyle="bold"
 android:layout_height="wrap_content"
-android:textSize="35dip"
-android:layout_gravity="center_horizontal"
-android:scaleType="center"
-android:layout_margin="10px">
+android:layout_margin="7.5dp"
+android:textColor="#FFFFFF"
+android:text="Totalnumber of strike oportunities (acc. to lst frame)"
+android:layout_width="wrap_content"
+android:id="@+id/TextView01"
+android:layout_alignLeft="@+id/edittext1"
+android:layout_alignRight="@+id/edittext1"></TextView>
+<Spinner
+android:layout_margin="7.5dp"
+android:id="@+id/spinner3"
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:layout_below="@+id/TextView01"
+android:layout_alignLeft="@+id/edittext1"
+android:layout_alignRight="@+id/edittext1"></Spinner>
+<TextView
+	android:textStyle="bold"
+	android:layout_height="wrap_content"
+	android:layout_margin="7.5dp"
+	android:textColor="#FFFFFF"
+	android:text="Num. of strikes"
+	android:layout_width="wrap_content"
+	android:id="@+id/strikesLabel"
+	android:layout_below="@+id/spinner3"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1"></TextView>
+<Spinner 
+	android:layout_width="wrap_content"
+	android:id="@+id/spinner1"
+	android:layout_margin="7.5dp"
+	android:layout_height="wrap_content"
+	android:layout_below="@+id/strikesLabel"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
+</Spinner>
+<TextView
+	android:textColor="#FFFFFF"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textStyle="bold"
+	android:text="Num. of spares"
+	android:id="@+id/sparesLabel"
+	android:layout_margin="7.5dp"
+	android:layout_below="@+id/spinner1"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
 </TextView>
-</LinearLayout>
+<Spinner 
+	android:layout_width="wrap_content"
+	android:id="@+id/spinner2"
+	android:layout_margin="7.5dp"
+	android:layout_height="wrap_content"
+	android:layout_below="@+id/sparesLabel"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
+</Spinner>
+<Button 
+	android:layout_width="fill_parent"
+	android:text="Add score"
+	style="@style/ButtonStyle"
+	android:layout_height="70dp"
+	android:onClick="addScoreButton"
+	android:id="@+id/button1"
+	android:layout_alignParentBottom="true">
+</Button>
+</RelativeLayout>

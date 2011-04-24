@@ -12,7 +12,7 @@
 			android:textColor="#FFFFFF"
 			android:layout_column="1"
 			android:text="Total rounds played"
-			android:padding="3dip" />
+			android:padding="3dp" />
 		<TextView
 			android:textColor="#FFFFFF"
 			android:id="@+id/totalRoundsStat"
@@ -32,8 +32,8 @@
 		<TextView
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
-			android:id="@+id/percentOfStrikesStat"
-			android:text="Ctrl-O" android:gravity="right"
+			android:id="@+id/percentOfStrikes"
+			android:gravity="right"
 			android:padding="3dip" />
 	</TableRow>
 	<View
@@ -49,8 +49,8 @@
 		<TextView
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
-			android:id="@+id/percentOfSparesStat"
-			android:text="Ctrl-S" android:gravity="right"
+			android:id="@+id/percentOfSpares"
+			android:gravity="right"
 			android:padding="3dip" />
 	</TableRow>
 	<View
@@ -61,38 +61,25 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"></LinearLayout>
 	<Button
-		android:background="@drawable/mate_button"
-		android:layout_width="250dp"
-		android:layout_height="63dp"
-		android:textColor="#FCFCFC"
-		android:textStyle="bold"
-		android:scaleType="fitXY"
-		android:layout_marginTop="25dip"
+		style="@style/ButtonStyle"
 		android:text="Daily average graph"
 		android:onClick="dailyAverageGraph"
 		android:id="@+id/button1">
 	</Button>
 	<Button 
-		android:background="@drawable/mate_button"
-		android:layout_width="250dp"
-		android:layout_height="63dp"
-		android:textColor="#FCFCFC"
-		android:textStyle="bold"
-		android:scaleType="fitXY"
+		style="@style/ButtonStyle"
 		android:onClick="monthlyAverageGraph"
-		android:layout_marginTop="15dip"
 		android:text="Monthly average graph"
 		android:id="@+id/button2"></Button>
 	<Button
-		android:background="@drawable/mate_button"
-		android:layout_width="250dp"
-		android:layout_height="63dp"
-		android:textColor="#FCFCFC"
-		android:textStyle="bold"
-		android:scaleType="fitXY"
+		style="@style/ButtonStyle"
 		android:id="@+id/button3"
 		android:text="Edit scores"
-		android:layout_marginTop="15dip"
 		android:onClick="editEntries"></Button>
+	<Button
+		style="@style/ButtonStyle"
+		android:id="@+id/clScBtn"
+		android:text="Clear All Scores"
+		android:onClick="clearScore"></Button>
 
 </TableLayout>

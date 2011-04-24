@@ -20,11 +20,11 @@ public class DBAdapter
     public static final String TIMESTAMP2 = "date(time, 'localtime')";
     private static final String TAG = "DBAdapter";
     private static final String DATABASE_NAME = "bowling_scores.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_CREATE =
     	"CREATE TABLE " + DATABASE_TABLE + 
-    	" ("+ _ID + " integer primary key autoincrement, " + SCORE_COLUMN +
-    	" int not null,"+ TIME +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP);";
+    	" ("+ _ID + " INTEGER primary key autoincrement, " + SCORE_COLUMN +
+    	" int not null,"+ TIME +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, strikes int, spares int, frames int);";
         
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -76,11 +76,14 @@ public class DBAdapter
     }
     
     //---insert a title into the database---
-    public long insertScore(int score) 
+    public long insertScore(int score, int strikes, int spares, int frames) 
     {
     	open();
         ContentValues initialValues = new ContentValues();
         initialValues.put(SCORE_COLUMN, score);
+        initialValues.put("strikes", strikes);
+        initialValues.put("spares", spares);
+        initialValues.put("frames", frames);
         
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
@@ -100,7 +103,10 @@ public class DBAdapter
         return db.query(DATABASE_TABLE, new String[] {
         		_ID, 
         		SCORE_COLUMN,
-        		TIMESTAMP2}, 
+        		TIMESTAMP2,
+        		"strikes",
+        		"spares",
+        		"frames"}, 
                 null, 
                 null, 
                 null, 
@@ -158,6 +164,11 @@ public class DBAdapter
 		 close();
 	 }
 	 
+	 
+	 public Cursor getPercentage(){
+	    	open();
+	    	return db.rawQuery("SELECT count(*), SUM(strikes), SUM(spares), SUM(frames) FROM "+DATABASE_TABLE, null);
+	    }
 
 	 
 	 

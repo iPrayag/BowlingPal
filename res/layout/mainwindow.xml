@@ -5,48 +5,27 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bowling_bg"
     >
-<TextView 
-	android:id="@+id/average"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" />
 <TextView
-android:textStyle="bold"
-android:textColor="#FF0000" 
-android:text="000" 
-android:layout_width="wrap_content"
- android:textSize="100dp" 
- android:layout_gravity="center_horizontal" 
- android:layout_margin="10px" 
- android:id="@+id/textView1" 
- android:layout_height="wrap_content"
- android:scaleType="fitXY"></TextView>
+	android:textStyle="bold"
+	android:textColor="#FFFFFF" 
+	android:layout_width="wrap_content"
+	android:textSize="100dp" 
+	android:layout_gravity="center_horizontal" 
+	android:layout_margin="10px" 
+	android:id="@+id/average" 
+	android:layout_height="wrap_content"
+	android:scaleType="fitXY"></TextView>
 <Button
-
-android:background="@drawable/mate_button"
-android:layout_width="250dp"
-android:layout_height="63dp"
-android:textColor="#FCFCFC"
-android:textStyle="bold"
-android:scaleType="fitXY"
-
+style="@style/ButtonStyle"
 android:id="@+id/button1"
 android:onClick="openScoreActivity"
-android:text="Add score"
-android:layout_margin="10px"
-android:layout_gravity="center_horizontal">
+android:text="Add score">
 </Button>
 
 <Button
-android:background="@drawable/mate_button"
+style="@style/ButtonStyle"
 android:text="Statistics"
-android:textColor="#FCFCFC"
-android:textStyle="bold"
-android:layout_width="250dp"
-android:layout_height="63dp"
 android:onClick="statsActivity"
 android:id="@+id/button3"
-android:scaleType="fitXY"
-android:layout_gravity="center_horizontal"
-android:layout_margin="5px"
 ></Button>
 </LinearLayout>
