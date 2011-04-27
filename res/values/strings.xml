@@ -5,7 +5,68 @@
     <string name="statsButton">Stats</string>
     <string name="empty">Nothing Here...</string>
     
-    <string name="settings_label">Delete all scores?</string>
-	<string name="settings_title">Sudoku settings</string>
-	<string name="settings_shortcut">d</string>
+	<string name="helpButton">Help</string>
+	
+	<!--Manage DB activity -->
+	<string name="export_warning">If you already have existing backup at BowlingPal folder - it will be overwritten! Are you sure?</string>
+	<string name="import_warning">Current database will be overwritten! Are you sure?</string>
+	<string name="delete_warning">All your scores will be deleted! Are you sure?</string>
+	<string name="editScoreButton">List all scores</string>
+	
+	<!--Add score activity -->
+	<string name="strike_ops_label">Strike opportunities</string>
+	<string name="num_of_strikes_label">Number of strikes you made</string>
+	<string name="num_of_spares_label">Number of spares you made</string>
+	<string name="addScoreButton">Add score</string>
+	<string name="clearAll">Clear ALL Scores</string>
+	
+	<!--Stats activity -->
+	<string name="totalRounds">Total rounds played</string>
+	<string name="totalStrikes">Total number of strikes</string>
+	<string name="totalSpares">Total number of spares</string>
+	<string name="emptyFrames">Total number of empty frames</string>
+	<string name="strikesPerc">% of strikes</string>
+	<string name="sparesPerc">% of spares</string>
+	<string name="dailyAvgChart">Daily average chart</string>
+	<string name="monthlyAvgChart">Monthly average chart</string>
+	<string name="over200text">% of games over 200</string>
+	<string name="hsLabel">High score</string>
+	<string name="monthlySSperc">Monthly str/spr percentage chart</string>
+	
+	
+	<!--Help activity -->
+	
+	<string name="strOppsLabel"><b>What is "Strike opportunities"?</b></string>
+	
+	<string name="strOppsHelp">"Strike opportunities" is the number of chances you had to roll a strike. This value depends on last frame and varies from 10 to 12.\n\n
+	For example, you have 9 strikes in first 9 frames, and 10th is open frame. Even though it is open frame, it counts as strike opportunity. So you got <b>10</b> in total.\n\n
+	If you made 10 strikes in a row, and got open frame or spare after that (or 9 strikes, spare and another strike) - it counts as <b>11</b> opportunities.\n\n
+	And with 11 or 12 strikes in a row it is always <b>12</b> strike opportunities. \n
+	\n
+	<b>To make it simple:</b>\n
+	0 strikes in last frame - 10 opps\n
+	1 strike in last frame - 11 opps\n
+	2 or 3 strikes in last frame - 12 opps\n</string>
+	
+	<string name="whyLabel"><b>Why so complicated?</b></string>
+	
+	<string name="whyDesc">We don\'t want to input results for every frame, but we want an accurate statistics.\n
+	Unfortunately, bowling got this annoying last frame, which mess everything up, so we need to track what is going on there.\n 
+	That\'s why we use "Strike opportunities".\n</string>
+	
+	<string name="perfectGameLabel"><b>Perfect game chance</b></string>
+	
+	<string name="perfectGameLabelDesc">I didn\'t included "Perfect game chance" into statistics because numbers like 0.000000000001% makes me sad. And they mess up small screens too.\n
+	So I\'ll just leave it here:\n
+	90% strikes: (0.9)^12 = 28%\n
+	80% strikes: (0.8)^12 = 6.8%\n
+	70% strikes: (0.7)^12 = 1%\n
+	60% strikes: (0.6)^12 = 0.2%\n
+	50% strikes: (0.5)^12 = 0.02%\n
+	40% strikes: (0.4)^12 = 0.0016%\n
+	30% strikes: (0.3)^12 = 0.000053%\n
+	20% strikes: (0.2)^12 = 0.00000004%\n
+	10% strikes: (0.1)^12 = 0.000000000001%\n
+	</string>
+	
 </resources>

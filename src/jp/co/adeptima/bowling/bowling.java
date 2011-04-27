@@ -20,8 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
 
 
 public class bowling extends Activity implements TextWatcher{
@@ -47,7 +45,6 @@ public class bowling extends Activity implements TextWatcher{
 	Object frames = 0;
 	int possibleSpares;
 	int modifier;
-	private IChart[] mCharts = new IChart[] {new ProjectStatusChart(),new SalesStackedBarChart()};
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -66,9 +63,8 @@ public class bowling extends Activity implements TextWatcher{
 		
 
 		populateStrikesSpinner(spinner3, 12, 10);
-
-		strikesLabel.setVisibility(View.INVISIBLE);
 		
+		strikesLabel.setVisibility(View.INVISIBLE);
 		spinner1.setVisibility(View.INVISIBLE);
 		spinner2.setVisibility(View.INVISIBLE);
 		sparesLabel.setVisibility(View.INVISIBLE);
@@ -78,15 +74,18 @@ public class bowling extends Activity implements TextWatcher{
 		    @Override
 		    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 		    	frames = parentView.getItemAtPosition(position);
-		    	if(spin3Check){
-		
 		    		spinner1.setVisibility(View.VISIBLE);
 		    		strikesLabel.setVisibility(View.VISIBLE);
-			    	populateStrikesSpinner(spinner1, Integer.parseInt(frames.toString()), 0);
-			    	
-		    } else {
-		    	spin3Check = true; 
-		    }
+		    		if(Integer.parseInt(frames.toString()) == 10 || Integer.parseInt(frames.toString()) == 11){
+		    			modifier = 1;
+		    		} else{
+		    			modifier = 0;
+		    		}
+			    	populateStrikesSpinner(spinner1, Integer.parseInt(frames.toString())-modifier, 0);
+			    	populateStrikesSpinner(spinner2, 10, 0);
+			    	InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+			    	imm.hideSoftInputFromWindow(edittext1.getWindowToken(), 0);
+			    	spin1Check = false; 
 		    	}
 
 		    @Override
@@ -105,7 +104,7 @@ public class bowling extends Activity implements TextWatcher{
 		    	strikes = parentView.getItemAtPosition(position);
 		    	if(spin1Check){
 		    	if(Integer.parseInt(strikes.toString()) <=11  ){
-		    		modifier = 2;	   		
+		    		modifier = 0;	   		
 		    	}
 		    	else{
 		    		modifier = 0;
@@ -119,8 +118,9 @@ public class bowling extends Activity implements TextWatcher{
 		    		spinner2.setVisibility(View.VISIBLE);
 			    	sparesLabel.setVisibility(View.VISIBLE);
 		    	}
-		    	
-		    	populateStrikesSpinner(spinner2, modifier+10-Integer.parseInt(strikes.toString()), 0);	
+		    	InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		    	imm.hideSoftInputFromWindow(edittext1.getWindowToken(), 0);
+		    	populateStrikesSpinner(spinner2, Integer.parseInt(frames.toString())-Integer.parseInt(strikes.toString()), 0);	
 		    	
 		    } else {
 		    	spin1Check = true; 
@@ -166,6 +166,7 @@ public class bowling extends Activity implements TextWatcher{
 			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.hideSoftInputFromWindow(edittext1.getWindowToken(), 0);
 			edittext1.setText("");
+			closeActivity();
 		}
 
 	}
@@ -193,21 +194,25 @@ public class bowling extends Activity implements TextWatcher{
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public void populateStrikesSpinner(Spinner spinner, int max, int min){
 		//Strikes spinner
 		m_myDynamicSpinner = spinner;
-		m_adapterForSpinner = new ArrayAdapter(this, android.R.layout.simple_spinner_item);
+		m_adapterForSpinner = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
 		m_adapterForSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		m_myDynamicSpinner.setAdapter(m_adapterForSpinner);
 		for(int i=min; i<max+1; i++){
 			m_adapterForSpinner.add(Integer.toString(i));
-       }
-		
-		
-		
+       }	
+	}
+	
+	public void closeActivity() {
+	    Intent intent = getIntent();
+	    overridePendingTransition(0, 0);
+	    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+	    finish();
+
 	}
 
 }

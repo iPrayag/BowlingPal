@@ -6,6 +6,7 @@
     android:background="@drawable/bowling_bg"
     >
 <TextView
+
 	android:textStyle="bold"
 	android:textColor="#FFFFFF" 
 	android:layout_width="wrap_content"
@@ -13,6 +14,7 @@
 	android:layout_gravity="center_horizontal" 
 	android:layout_margin="10px" 
 	android:id="@+id/average" 
+	android:text="000"
 	android:layout_height="wrap_content"
 	android:scaleType="fitXY"></TextView>
 <Button
@@ -27,5 +29,19 @@ style="@style/ButtonStyle"
 android:text="Statistics"
 android:onClick="statsActivity"
 android:id="@+id/button3"
+></Button>
+
+<Button
+style="@style/ButtonStyle"
+android:text="Manage scores database"
+android:onClick="manageDb"
+android:id="@+id/manageDb"
+></Button>
+
+<Button
+style="@style/ButtonStyle"
+android:text="@string/helpButton"
+android:onClick="helpActivity"
+android:id="@+id/helpButton"
 ></Button>
 </LinearLayout>

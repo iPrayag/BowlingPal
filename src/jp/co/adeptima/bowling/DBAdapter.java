@@ -1,10 +1,13 @@
 package jp.co.adeptima.bowling;
 
-
+import static jp.co.adeptima.bowling.Constants.DATABASE_NAME;
 import static android.provider.BaseColumns._ID;
 import static jp.co.adeptima.bowling.Constants.DATABASE_TABLE;
-import static jp.co.adeptima.bowling.Constants.TIME;
+import static jp.co.adeptima.bowling.Constants.TIMESTAMPT_COLUMN;
 import static jp.co.adeptima.bowling.Constants.SCORE_COLUMN;
+import static jp.co.adeptima.bowling.Constants.STRIKES_COLUMN;
+import static jp.co.adeptima.bowling.Constants.SPARES_COLUMN;
+import static jp.co.adeptima.bowling.Constants.FRAMES_COLUMN;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,16 +18,15 @@ import android.util.Log;
 
 public class DBAdapter 
 {
-	
-    public static final String TIMESTAMP = "time";
-    public static final String TIMESTAMP2 = "date(time, 'localtime')";
+    public static final String TIMESTAMP_QUERRY = "date(time, 'localtime')";
     private static final String TAG = "DBAdapter";
-    private static final String DATABASE_NAME = "bowling_scores.db";
-    private static final int DATABASE_VERSION = 2;
+
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_CREATE =
     	"CREATE TABLE " + DATABASE_TABLE + 
     	" ("+ _ID + " INTEGER primary key autoincrement, " + SCORE_COLUMN +
-    	" int not null,"+ TIME +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, strikes int, spares int, frames int);";
+    	" int not null,"+ TIMESTAMPT_COLUMN +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
+    	+STRIKES_COLUMN+" int, "+SPARES_COLUMN+" int, "+FRAMES_COLUMN+" int);";
         
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -81,9 +83,9 @@ public class DBAdapter
     	open();
         ContentValues initialValues = new ContentValues();
         initialValues.put(SCORE_COLUMN, score);
-        initialValues.put("strikes", strikes);
-        initialValues.put("spares", spares);
-        initialValues.put("frames", frames);
+        initialValues.put(STRIKES_COLUMN, strikes);
+        initialValues.put(SPARES_COLUMN, spares);
+        initialValues.put(FRAMES_COLUMN, frames);
         
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
@@ -103,10 +105,10 @@ public class DBAdapter
         return db.query(DATABASE_TABLE, new String[] {
         		_ID, 
         		SCORE_COLUMN,
-        		TIMESTAMP2,
-        		"strikes",
-        		"spares",
-        		"frames"}, 
+        		TIMESTAMP_QUERRY,
+        		STRIKES_COLUMN,
+        		SPARES_COLUMN,
+        		FRAMES_COLUMN}, 
                 null, 
                 null, 
                 null, 
@@ -135,22 +137,22 @@ public class DBAdapter
     
     public Cursor getNumberOfScores(){
     	open();
-    	return db.rawQuery("SELECT Count(*) FROM scores", null);
+    	return db.rawQuery("SELECT Count(*) FROM "+DATABASE_TABLE, null);
     }
     
     public Cursor getAverage(){
     	open();
-    	return db.rawQuery("SELECT AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE+"", null);
+    	return db.rawQuery("SELECT AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE, null);
     }
     
     public Cursor getDailyAverage(){
     	open();
-    	return db.rawQuery("SELECT Count("+_ID+"),AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE+" GROUP BY date(time, 'localtime')", null);
+    	return db.rawQuery("SELECT strftime('%Y-%m-%d', "+TIMESTAMPT_COLUMN+"), AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE+" GROUP BY strftime('%Y-%m-%d', time)", null);
     }
     
     public Cursor getMonthlyAverage(){
     	open();
-    	return db.rawQuery("SELECT strftime('%Y-%m', time), AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE+" GROUP BY strftime('%m', time)", null);
+    	return db.rawQuery("SELECT strftime('%Y-%m', "+TIMESTAMPT_COLUMN+"), AVG("+SCORE_COLUMN+") FROM "+DATABASE_TABLE+" GROUP BY strftime('%Y-%m', time)", null);
     }
     
     public boolean deleteEverything() 
@@ -167,12 +169,27 @@ public class DBAdapter
 	 
 	 public Cursor getPercentage(){
 	    	open();
-	    	return db.rawQuery("SELECT count(*), SUM(strikes), SUM(spares), SUM(frames) FROM "+DATABASE_TABLE, null);
+	    	return db.rawQuery("SELECT count(*), SUM("+STRIKES_COLUMN+"), SUM("+SPARES_COLUMN+"), SUM("+FRAMES_COLUMN+") FROM "+DATABASE_TABLE, null);
 	    }
 
+	 public Cursor gamesOver200(){
+	    	open();
+	    	return db.rawQuery("SELECT count(*) FROM "+DATABASE_TABLE+" WHERE "+SCORE_COLUMN+" >=200", null);
+	    }
+	 
+	 public Cursor getHighScore(){
+	    	open();
+	    	return db.rawQuery("SELECT max("+SCORE_COLUMN+") FROM "+DATABASE_TABLE, null);
+	    }
 	 
 	 
+	 public Cursor ssMonthlyAvgPerc(){
+	    	open();
+	    	return db.rawQuery("SELECT strftime('%Y-%m', "+TIMESTAMPT_COLUMN+"), SUM(strikes), SUM(spares), SUM(strOpps) FROM scores GROUP BY strftime('%Y-%m', time);", null);
+	    }
     
+	// TODO Make calculations inside queries
+	 
     //---updates a title---
     public boolean updateScore(long rowId, int score) 
     {

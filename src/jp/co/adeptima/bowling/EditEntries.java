@@ -3,15 +3,11 @@ package jp.co.adeptima.bowling;
 
 
 import static android.provider.BaseColumns._ID;
-import static jp.co.adeptima.bowling.Constants.TIME;
 import static jp.co.adeptima.bowling.Constants.SCORE_COLUMN;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 
 public class EditEntries extends ListActivity  {
