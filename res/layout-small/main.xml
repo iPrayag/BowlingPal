@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bowling_bg"
+    >
+<EditText
+		android:layout_margin="3.5dp"
+		android:numeric="decimal"
+		android:maxLength="3"
+        android:id="@+id/edittext1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:textSize="25dp"
+        android:imeOptions="actionDone"/>
+<TextView
+android:layout_below="@+id/edittext1"
+android:textStyle="bold"
+android:layout_height="wrap_content"
+android:layout_margin="3.5dp"
+android:textColor="#FFFFFF"
+android:text="@string/strike_ops_label"
+android:layout_width="wrap_content"
+android:id="@+id/TextView01"
+android:layout_alignLeft="@+id/edittext1"
+android:layout_alignRight="@+id/edittext1"></TextView>
+<Spinner
+android:layout_margin="3.5dp"
+android:id="@+id/spinner3"
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:layout_below="@+id/TextView01"
+android:layout_alignLeft="@+id/edittext1"
+android:layout_alignRight="@+id/edittext1"></Spinner>
+<TextView
+	android:textStyle="bold"
+	android:layout_height="wrap_content"
+	android:layout_margin="3.5dp"
+	android:textColor="#FFFFFF"
+	android:text="@string/num_of_strikes_label"
+	android:layout_width="wrap_content"
+	android:id="@+id/strikesLabel"
+	android:layout_below="@+id/spinner3"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1"></TextView>
+<Spinner 
+	android:layout_width="wrap_content"
+	android:id="@+id/spinner1"
+	android:layout_margin="3.5dp"
+	android:layout_height="wrap_content"
+	android:layout_below="@+id/strikesLabel"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
+</Spinner>
+<TextView
+	android:textColor="#FFFFFF"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textStyle="bold"
+	android:text="@string/num_of_spares_label"
+	android:id="@+id/sparesLabel"
+	android:layout_margin="3.5dp"
+	android:layout_below="@+id/spinner1"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
+</TextView>
+<Spinner 
+	android:layout_width="wrap_content"
+	android:id="@+id/spinner2"
+	android:layout_margin="3.5dp"
+	android:layout_height="wrap_content"
+	android:layout_below="@+id/sparesLabel"
+	android:layout_alignLeft="@+id/edittext1"
+	android:layout_alignRight="@+id/edittext1">
+</Spinner>
+<Button 
+	android:layout_width="fill_parent"
+	android:text="@string/addScoreButton"
+	style="@style/ButtonStyle"
+	android:layout_height="50dp"
+	android:onClick="addScoreButton"
+	android:id="@+id/button1"
+	android:layout_alignParentBottom="true">
+</Button>
+</RelativeLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:stretchColumns="1"
+	android:background="@drawable/bowling_bg">
+
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/totalRounds"
+			android:padding="3dp" />
+		<TextView
+			android:textColor="#FFFFFF"
+			android:id="@+id/totalRoundsStat"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	
+		<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/totalStrikes"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/totalStrikes"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+			<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/totalSpares"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/totalSpares"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+		<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/emptyFrames"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/emptyFrames"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<View
+		android:layout_height="2dip"
+		android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/strikesPerc"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/percentOfStrikes"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<View
+	android:layout_height="2dip"
+	android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/sparesPerc"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/percentOfSpares"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+		<View
+	android:layout_height="2dip"
+	android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/over200text"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/over200perc"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+			<View
+	android:layout_height="2dip"
+	android:background="#FFFFFF" />
+	<TableRow>
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:layout_column="1"
+			android:text="@string/hsLabel"
+			android:padding="3dip" />
+		<TextView
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:id="@+id/hsValue"
+			android:gravity="right"
+			android:padding="3dip" />
+	</TableRow>
+	<LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></LinearLayout>
+	<Button
+		style="@style/ButtonStyleSmall"
+		android:text="@string/dailyAvgChart"
+		android:onClick="dailyAverageGraph"
+		android:id="@+id/button1">
+	</Button>
+	<Button 
+		style="@style/ButtonStyleSmall"
+		android:onClick="monthlyAverageGraph"
+		android:text="@string/monthlyAvgChart"
+		android:id="@+id/button2"></Button>
+	<Button 
+		style="@style/ButtonStyleSmall"
+		android:onClick="monthlySSperc"
+		android:text="@string/monthlySSperc"
+		android:id="@+id/button2"></Button>
+
+
+</TableLayout>

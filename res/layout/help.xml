@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroller"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+    
+    <LinearLayout
+	     android:orientation="vertical"
+	     android:id="@+id/linearLayout1"
+	     android:layout_width="fill_parent"
+	     android:layout_height="fill_parent"
+	     xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+        android:background="#7A797A"
+	        android:textStyle="bold"
+	        android:text="@string/strOppsLabel"
+	        android:id="@+id/strOppsLabel"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"></TextView>
+        <TextView
+	        android:text="@string/strOppsHelp"
+	        android:id="@+id/strOppsHelp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"></TextView>
+	        
+	    <TextView
+        	android:background="#7A797A"
+	        android:textStyle="bold"
+	        android:text="@string/whyLabel"
+	        android:id="@+id/whyLabel"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"></TextView>
+	        
+	   <TextView
+	        android:text="@string/whyDesc"
+	        android:id="@+id/whyDesc"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"></TextView>
+	        
+	        
+	        
+	   <TextView
+        	android:background="#7A797A"
+	        android:textStyle="bold"
+	        android:text="@string/perfectGameLabel"
+	        android:id="@+id/perfectGameLabel"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"></TextView>
+	        
+	   <TextView
+	        android:text="@string/perfectGameLabelDesc"
+	        android:id="@+id/perfectGameLabelDesc"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"></TextView>
+	        
+	        
+    </LinearLayout>
+</ScrollView>

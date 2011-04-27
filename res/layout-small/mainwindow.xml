@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bowling_bg"
+    >
+<TextView
+
+	android:textStyle="bold"
+	android:textColor="#FFFFFF" 
+	android:layout_width="wrap_content"
+	android:textSize="65dp" 
+	android:layout_gravity="center_horizontal" 
+	android:layout_margin="10px" 
+	android:id="@+id/average" 
+	android:layout_height="wrap_content"
+	android:scaleType="fitXY"></TextView>
+<Button
+style="@style/ButtonStyle"
+android:id="@+id/button1"
+android:onClick="openScoreActivity"
+android:text="Add score">
+</Button>
+
+<Button
+style="@style/ButtonStyle"
+android:text="Statistics"
+android:onClick="statsActivity"
+android:id="@+id/button3"
+></Button>
+
+<Button
+style="@style/ButtonStyle"
+android:text="Manage scores database"
+android:onClick="manageDb"
+android:id="@+id/manageDb"
+></Button>
+
+<Button
+style="@style/ButtonStyle"
+android:text="@string/helpButton"
+android:onClick="helpActivity"
+android:id="@+id/helpButton"
+></Button>
+</LinearLayout>

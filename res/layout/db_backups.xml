@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    >
+<TextView
+	android:textStyle="bold"
+	android:textColor="#FFFFFF" 
+	android:layout_width="wrap_content"
+	android:textSize="15dp" 
+	android:layout_gravity="center_horizontal" 
+	android:layout_margin="10px" 
+	android:id="@+id/backupDesc" 
+	android:layout_height="wrap_content"
+	android:scaleType="fitXY"
+	android:text="Export database function will copy database with all your scores to BowlingPal folder on you SD card"></TextView>
+<Button
+	android:layout_alignLeft="@+id/backupDesc"
+	android:layout_alignRight="@+id/backupDesc"
+	android:layout_below="@+id/backupDesc"
+	style="@style/ButtonStyle"
+	android:id="@+id/exportDb"
+	android:onClick="exportDb"
+	android:text="Export database">
+</Button>
+<TextView
+	android:layout_below="@+id/exportDb"
+	android:textStyle="bold"
+	android:textColor="#FFFFFF" 
+	android:layout_width="wrap_content"
+	android:textSize="15dp" 
+	android:layout_gravity="center_horizontal" 
+	android:layout_margin="10px" 
+	android:id="@+id/impordDesc" 
+	android:layout_height="wrap_content"
+	android:scaleType="fitXY"
+	android:text="Import database function will import bowling_scores.db file from BowlingPal folder (if it's not there - make it) on you SD card."></TextView>
+<Button
+	android:layout_alignLeft="@+id/backupDesc"
+	android:layout_alignRight="@+id/backupDesc"
+	android:layout_below="@+id/impordDesc"
+	style="@style/ButtonStyle"
+	android:text="Import database"
+	android:onClick="importDb"
+	android:id="@+id/importDb"
+></Button>
+
+<Button
+	android:layout_alignLeft="@+id/backupDesc"
+	android:layout_alignRight="@+id/backupDesc"
+		
+	style="@style/ButtonStyle"
+	android:id="@+id/clScBtn"
+	android:text="@string/clearAll"
+	android:onClick="clearScore"
+	android:layout_alignParentBottom="true"></Button>
+<Button
+android:layout_width="wrap_content"
+style="@style/ButtonStyle"
+android:layout_height="wrap_content"
+android:text="@string/editScoreButton"
+android:id="@+id/button3"
+android:onClick="editEntries"
+android:layout_above="@+id/clScBtn"
+	android:layout_alignLeft="@+id/backupDesc"
+	android:layout_alignRight="@+id/backupDesc"></Button>
+</RelativeLayout>
