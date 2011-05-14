@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, bowling!</string>
-    <string name="app_name">BowlTrack</string>
+
+    <string name="app_name">Lazy Bowling Stats</string>
     <string name="statsButton">Stats</string>
     <string name="empty">Nothing Here...</string>
     
 	<string name="helpButton">Help</string>
 	
 	<!--Manage DB activity -->
-	<string name="export_warning">If you already have existing backup at BowlingPal folder - it will be overwritten! Are you sure?</string>
+	<string name="export_warning">If you already have existing backup at LazyBowling folder - it will be overwritten! Are you sure?</string>
 	<string name="import_warning">Current database will be overwritten! Are you sure?</string>
 	<string name="delete_warning">All your scores will be deleted! Are you sure?</string>
 	<string name="editScoreButton">List all scores</string>

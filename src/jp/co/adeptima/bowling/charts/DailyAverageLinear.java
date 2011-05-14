@@ -95,7 +95,7 @@ public class DailyAverageLinear extends ChartRenderers {
 
 
     Intent intent = ChartFactory.getLineChartIntent(context, buildDataset(titles, dates, values),
-        renderer, "Average temperature");
+        renderer, "");
     return intent;
   }
 

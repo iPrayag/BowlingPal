@@ -44,12 +44,12 @@ public class DatabaseBackups extends Activity {
 
 			if (sd.canWrite()) {
 				
-			File bpDir = new File("/sdcard/BowlingPal/");
+			File bpDir = new File("/sdcard/LazyBowling/");
 			// have the object build the directory structure, if needed.
 			bpDir.mkdirs();
 
 			String currentDBPath = "\\data\\jp.co.adeptima.bowling\\databases\\bowling_scores.db";
-			String backupDBPath = "\\BowlingPal\\bowling_scores.db";
+			String backupDBPath = "\\LazyBowling\\bowling_scores.db";
 
 			File currentDB = new File(data, currentDBPath);
 			File sdDB = new File(sd, backupDBPath);
@@ -74,7 +74,7 @@ public class DatabaseBackups extends Activity {
 					src.close();
 					dst.close();
 					} else {
-						Toast.makeText(this, "Can't find \\BowlingPal\\bowling_scores.db to import from.",
+						Toast.makeText(this, "Can't find \\LazyBowling\\bowling_scores.db to import from.",
 								Toast.LENGTH_SHORT).show();
 					}
 			}

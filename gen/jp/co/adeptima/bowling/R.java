@@ -75,45 +75,44 @@ public final class R {
         public static final int stats=0x7f030006;
     }
     public static final class string {
-        public static final int addScoreButton=0x7f05000c;
-        public static final int app_name=0x7f050001;
-        public static final int clearAll=0x7f05000d;
-        public static final int dailyAvgChart=0x7f050014;
-        public static final int delete_warning=0x7f050007;
-        public static final int editScoreButton=0x7f050008;
-        public static final int empty=0x7f050003;
-        public static final int emptyFrames=0x7f050011;
+        public static final int addScoreButton=0x7f05000b;
+        public static final int app_name=0x7f050000;
+        public static final int clearAll=0x7f05000c;
+        public static final int dailyAvgChart=0x7f050013;
+        public static final int delete_warning=0x7f050006;
+        public static final int editScoreButton=0x7f050007;
+        public static final int empty=0x7f050002;
+        public static final int emptyFrames=0x7f050010;
         /** Manage DB activity 
          */
-        public static final int export_warning=0x7f050005;
-        public static final int hello=0x7f050000;
-        public static final int helpButton=0x7f050004;
-        public static final int hsLabel=0x7f050017;
-        public static final int import_warning=0x7f050006;
-        public static final int monthlyAvgChart=0x7f050015;
-        public static final int monthlySSperc=0x7f050018;
-        public static final int num_of_spares_label=0x7f05000b;
-        public static final int num_of_strikes_label=0x7f05000a;
-        public static final int over200text=0x7f050016;
-        public static final int perfectGameLabel=0x7f05001d;
-        public static final int perfectGameLabelDesc=0x7f05001e;
-        public static final int sparesPerc=0x7f050013;
-        public static final int statsButton=0x7f050002;
-        public static final int strOppsHelp=0x7f05001a;
+        public static final int export_warning=0x7f050004;
+        public static final int helpButton=0x7f050003;
+        public static final int hsLabel=0x7f050016;
+        public static final int import_warning=0x7f050005;
+        public static final int monthlyAvgChart=0x7f050014;
+        public static final int monthlySSperc=0x7f050017;
+        public static final int num_of_spares_label=0x7f05000a;
+        public static final int num_of_strikes_label=0x7f050009;
+        public static final int over200text=0x7f050015;
+        public static final int perfectGameLabel=0x7f05001c;
+        public static final int perfectGameLabelDesc=0x7f05001d;
+        public static final int sparesPerc=0x7f050012;
+        public static final int statsButton=0x7f050001;
+        public static final int strOppsHelp=0x7f050019;
         /** Help activity 
          */
-        public static final int strOppsLabel=0x7f050019;
+        public static final int strOppsLabel=0x7f050018;
         /** Add score activity 
          */
-        public static final int strike_ops_label=0x7f050009;
-        public static final int strikesPerc=0x7f050012;
+        public static final int strike_ops_label=0x7f050008;
+        public static final int strikesPerc=0x7f050011;
         /** Stats activity 
          */
-        public static final int totalRounds=0x7f05000e;
-        public static final int totalSpares=0x7f050010;
-        public static final int totalStrikes=0x7f05000f;
-        public static final int whyDesc=0x7f05001c;
-        public static final int whyLabel=0x7f05001b;
+        public static final int totalRounds=0x7f05000d;
+        public static final int totalSpares=0x7f05000f;
+        public static final int totalStrikes=0x7f05000e;
+        public static final int whyDesc=0x7f05001b;
+        public static final int whyLabel=0x7f05001a;
     }
     public static final class style {
         public static final int ButtonStyle=0x7f040000;
